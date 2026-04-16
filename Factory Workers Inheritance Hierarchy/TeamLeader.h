@@ -1,9 +1,9 @@
 #ifndef TEAMLEADER_H
 #define TEAMLEADER_H
 
-#include "Employee.h"
+#include "ProductionWorker.h"
 
-class TeamLeader : public Employee
+class TeamLeader : public ProductionWorker
 {
 private:
 	int monthly_bonus;

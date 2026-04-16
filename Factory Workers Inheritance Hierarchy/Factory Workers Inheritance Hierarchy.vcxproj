@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Factory Workers Inheritance Hierarchy.cpp" />
     <ClCompile Include="ProductionWorker.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="TeamLeader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Date.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="ProductionWorker.h" />
     <ClInclude Include="ShiftSupervisor.h" />

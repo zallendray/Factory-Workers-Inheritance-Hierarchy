@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Factory Workers Inheritance Hierarchy/Factory Workers Inheritance Hierarchy.vcxproj" />
+</Solution>

@@ -13,10 +13,14 @@ private:
 public:
 	Employee();
 
-	void setName();
-	void getName();
-	int setNumber();
+	void setName(std::string Name);
+	std::string getName();
+	void setNumber(int Number);
 	int getNumber();
+	void setDate(int m, int d, int y);
+	int getMonth(int m);
+	int getDay(int d);
+	int getYear(int y);
 	void printEmployee();
 };
 

@@ -8,7 +8,7 @@ class Employee
 {
 private:
 	std::string Name;
-	int Number;
+	int Number = 0;
 	Date Date_Hired;
 public:
 	Employee();

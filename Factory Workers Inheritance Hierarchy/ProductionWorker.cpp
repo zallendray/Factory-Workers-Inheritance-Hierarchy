@@ -10,7 +10,12 @@ ProductionWorker::ProductionWorker(std::string E_Name, int E_Num, int day, int m
 	else {
 		shift = 0;
 	}
-	hourly_pay = P_Pay;
+	if (P_Pay > 0) {
+		hourly_pay = P_Pay;
+	}
+	else {
+		hourly_pay = 0;
+	}
 }
 
 void ProductionWorker::setShift(int P_Shift)
@@ -30,7 +35,12 @@ int ProductionWorker::getShift()
 
 void ProductionWorker::setHourlyPay(double P_Pay)
 {
-	hourly_pay = P_Pay;
+	if (P_Pay > 0) {
+		hourly_pay = P_Pay;
+	}
+	else {
+		hourly_pay = 0;
+	}
 }
 
 double ProductionWorker::getHourlyPay()
@@ -41,5 +51,5 @@ double ProductionWorker::getHourlyPay()
 void ProductionWorker::printProductionWorker()
 {
 	ProductionWorker::printEmployee();
-	std::cout << std::endl << "Shift: " << ProductionWorker::shift << std::endl << "Hourly Pay: $" << ProductionWorker::hourly_pay;
+	std::cout << std::endl << "Shift: " << ProductionWorker::shift << std::endl << "Hourly Pay: $" << ProductionWorker::hourly_pay << std::endl << std::endl;
 }

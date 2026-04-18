@@ -13,8 +13,8 @@ private:
 public:
 	ProductionWorker(std::string E_Name, int E_Num, int day, int month, int year, int P_Shift, double P_Pay);
 	void setShift(int P_Shift);
-	bool getShift();
-	void setHourlyPay();
+	int getShift();
+	void setHourlyPay(double P_Pay);
 	double getHourlyPay();
 	void printProductionWorker();
 };

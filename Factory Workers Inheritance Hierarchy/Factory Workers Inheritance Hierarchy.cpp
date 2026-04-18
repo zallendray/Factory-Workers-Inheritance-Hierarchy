@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include "ProductionWorker.h"
+#include <string>
 
 int main()
 {
-    ProductionWorker E;
+    ProductionWorker E("Jimmy",1423,23,5,2006,1,27.4);
 
     E.printProductionWorker();
 }

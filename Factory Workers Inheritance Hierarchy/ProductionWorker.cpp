@@ -23,24 +23,23 @@ void ProductionWorker::setShift(int P_Shift)
 	}
 }
 
-bool ProductionWorker::getShift()
+int ProductionWorker::getShift()
 {
-
+	return shift;
 }
 
-void ProductionWorker::setHourlyPay()
+void ProductionWorker::setHourlyPay(double P_Pay)
 {
-
+	hourly_pay = P_Pay;
 }
 
 double ProductionWorker::getHourlyPay()
 {
-
+	return hourly_pay;
 }
 
 void ProductionWorker::printProductionWorker()
 {
-
 	ProductionWorker::printEmployee();
 	std::cout << std::endl << "Shift: " << ProductionWorker::shift << std::endl << "Hourly Pay: $" << ProductionWorker::hourly_pay;
 }

@@ -11,7 +11,7 @@ private:
 	int Number = 0;
 	Date Date_Hired;
 public:
-	Employee();
+	Employee(std::string E_Name, int E_Num, int day, int month, int year);
 
 	void setName(std::string Name);
 	std::string getName();

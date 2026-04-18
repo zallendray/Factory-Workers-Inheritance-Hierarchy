@@ -2,11 +2,11 @@
 //
 
 #include <iostream>
-#include "Employee.h"
+#include "ProductionWorker.h"
 
 int main()
 {
-    Employee E;
+    ProductionWorker E;
 
-    E.printEmployee();
+    E.printProductionWorker();
 }

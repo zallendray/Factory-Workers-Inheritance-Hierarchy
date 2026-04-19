@@ -51,5 +51,5 @@ int ShiftSupervisor::getBonus()
 void ShiftSupervisor::printShiftSupervisor()
 {
 	ShiftSupervisor::printEmployee();
-	std::cout << std::endl << "Annual Salary: $" << ShiftSupervisor::annual_salary << std::endl << "Annual Production Bonus: $" << ShiftSupervisor::annual_production_bonus << std::endl << std::endl;
+	std::cout << std::endl << "Annual Salary: $" << ShiftSupervisor::annual_salary << std::endl << "Annual Production Bonus: $" << ShiftSupervisor::annual_production_bonus;
 }

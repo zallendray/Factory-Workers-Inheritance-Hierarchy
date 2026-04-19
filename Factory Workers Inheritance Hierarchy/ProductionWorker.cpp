@@ -51,5 +51,5 @@ double ProductionWorker::getHourlyPay()
 void ProductionWorker::printProductionWorker()
 {
 	ProductionWorker::printEmployee();
-	std::cout << std::endl << "Shift: " << ProductionWorker::shift << std::endl << "Hourly Pay: $" << ProductionWorker::hourly_pay << std::endl << std::endl;
+	std::cout << std::endl << "Shift: " << ProductionWorker::shift << std::endl << "Hourly Pay: $" << ProductionWorker::hourly_pay;
 }

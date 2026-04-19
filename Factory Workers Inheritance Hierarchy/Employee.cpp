@@ -51,5 +51,5 @@ int Employee::getYear(int y)
 
 void Employee::printEmployee()
 {
-	std::cout << "Name: " << Employee::Name << std::endl << "Employee Number: " << Employee::Number << std::endl << "Date Hired: " << Employee::Date_Hired;
+	std::cout << std::endl << std::endl << "Name: " << Employee::Name << std::endl << "Employee Number: " << Employee::Number << std::endl << "Date Hired: " << Employee::Date_Hired;
 }

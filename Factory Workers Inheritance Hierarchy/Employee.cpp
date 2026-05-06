@@ -1,11 +1,18 @@
 #include "Employee.h"
 #include <iostream>
 #include <string>
+#include <stdexcept>
 
 Employee::Employee(std::string E_Name, int E_Num, int day, int month, int year)
 {
 	Name = E_Name;
-	Number = E_Num;
+	try {
+		setNumber(E_Num);
+	}
+	catch (const InvalidEmployeeNumber& e) {
+		std::cerr << e.what() << '\n';
+	}
+		
 	Date_Hired.set_date(month, day, year);
 }
 
@@ -21,7 +28,12 @@ std::string Employee::getName()
 
 void Employee::setNumber(int Number)
 {
-	Employee::Number = Number;
+	if (Number > -1 and Number < 10000) {
+		Employee::Number = Number;
+	}
+	else {
+		throw InvalidEmployeeNumber("Invalid Employee Number! ");
+	}
 }
 
 int Employee::getNumber()
@@ -34,17 +46,17 @@ void Employee::setDate(int m, int d, int y)
 	Employee::Date_Hired.set_date(m, d, y);
 }
 
-int Employee::getMonth(int m)
+int Employee::getMonth()
 {
 	return Employee::Date_Hired.get_month();
 }
 
-int Employee::getDay(int d)
+int Employee::getDay()
 {
 	return Employee::Date_Hired.get_day();
 }
 
-int Employee::getYear(int y)
+int Employee::getYear()
 {
 	return Employee::Date_Hired.get_year();
 }

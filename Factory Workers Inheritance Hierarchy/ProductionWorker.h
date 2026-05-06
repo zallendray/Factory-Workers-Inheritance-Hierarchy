@@ -17,6 +17,25 @@ public:
 	void setHourlyPay(double P_Pay);
 	double getHourlyPay();
 	void printProductionWorker();
+
+	class InvalidShift : public std::exception {
+	private:
+		std::string message;
+	public:
+		InvalidShift(const std::string& msg) : message(msg) {}
+		const char* what() const noexcept override {
+			return message.c_str();
+		}
+	};
+	class InvalidPayRate : public std::exception {
+	private:
+		std::string message;
+	public:
+		InvalidPayRate(const std::string& msg) : message(msg) {}
+		const char* what() const noexcept override {
+			return message.c_str();
+		}
+	};
 };
 
 #endif

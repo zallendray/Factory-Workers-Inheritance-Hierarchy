@@ -4,17 +4,17 @@
 
 ProductionWorker::ProductionWorker(std::string E_Name, int E_Num, int day, int month, int year, int P_Shift, double P_Pay) : Employee(E_Name, E_Num, day, month, year)
 {
-	if (P_Shift == 1 or P_Shift == 2) {
-		shift = P_Shift;
+	try {
+	setShift(P_Shift);
 	}
-	else {
-		shift = 1;
+	catch (const InvalidShift& e) {
+		std::cerr << e.what() << '\n';
 	}
-	if (P_Pay > 0) {
-		hourly_pay = P_Pay;
+	try {
+		setHourlyPay(P_Pay);
 	}
-	else {
-		hourly_pay = 0;
+	catch (const InvalidPayRate& e) {
+		std::cerr << e.what() << '\n';
 	}
 }
 
@@ -24,7 +24,7 @@ void ProductionWorker::setShift(int P_Shift)
 		shift = P_Shift;
 	}
 	else {
-		shift = 1;
+		throw InvalidShift("Invalid Shift! ");
 	}
 }
 
@@ -39,7 +39,7 @@ void ProductionWorker::setHourlyPay(double P_Pay)
 		hourly_pay = P_Pay;
 	}
 	else {
-		hourly_pay = 0;
+		throw InvalidPayRate("Invalid Pay Rate! ");
 	}
 }
 

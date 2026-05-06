@@ -61,7 +61,8 @@ void enter_production_worker(ProductionWorker& P)
 {
     bool fail = true;
     std::string name;
-    int number, day, month, year;
+    double pay;
+    int number, day, month, year, shift;
 
     enter_name(name);
 
@@ -73,17 +74,50 @@ void enter_production_worker(ProductionWorker& P)
             P.setNumber(number);
             fail = false;
         }
-        catch (const ShiftSupervisor::InvalidEmployeeNumber& e) {
+        catch (const ProductionWorker::InvalidEmployeeNumber& e) {
             std::cin.clear();
             std::cin.ignore(100, '\n');
-            std::cerr << e.what() << "Please enter a number between 0 and 9999. " << '\n';
+            std::cerr << e.what() << "Please enter a number from 0 to 9999. " << '\n';
         }
     }
 
     enter_date(day, month, year);
     P.setDate(month, day, year);
 
+    fail = true;
+    std::cout << std::endl << "Enter Shift (1 or 2): ";
+
+    while (fail == true) {
+        std::cin >> shift;
+        try {
+            P.setShift(shift);
+            fail = false;
+        }
+        catch (const ProductionWorker::InvalidShift& e) {
+            std::cin.clear();
+            std::cin.ignore(100, '\n');
+            std::cerr << e.what() << "Please enter a number from 1 to 2. " << '\n';
+        }
+    }
+
+    fail = true;
+    std::cout << std::endl << "Enter Pay Rate: ";
+
+    while (fail == true) {
+        std::cin >> pay;
+        try {
+            P.setHourlyPay(pay);
+            fail = false;
+        }
+        catch (const ProductionWorker::InvalidPayRate& e) {
+            std::cin.clear();
+            std::cin.ignore(100, '\n');
+            std::cerr << e.what() << "Please enter a value greater than 0. " << '\n';
+        }
+    }
+
     P.printEmployee();
+    P.printProductionWorker();
 }
 
 void enter_shift_supervisor(ShiftSupervisor& S)
@@ -105,7 +139,7 @@ void enter_shift_supervisor(ShiftSupervisor& S)
         catch (const ShiftSupervisor::InvalidEmployeeNumber& e) {
             std::cin.clear();
             std::cin.ignore(100, '\n');
-            std::cerr << e.what() << "Please enter a number between 0 and 9999. " << '\n';
+            std::cerr << e.what() << "Please enter a number from 0 to 9999. " << '\n';
         }
     }
 
@@ -131,10 +165,10 @@ void enter_team_leader(TeamLeader& T)
             T.setNumber(number);
             fail = false;
         }
-        catch (const ShiftSupervisor::InvalidEmployeeNumber& e) {
+        catch (const TeamLeader::InvalidEmployeeNumber& e) {
             std::cin.clear();
             std::cin.ignore(100, '\n');
-            std::cerr << e.what() << "Please enter a number between 0 and 9999. " << '\n';
+            std::cerr << e.what() << "Please enter a number from 0 to 9999. " << '\n';
         }
     }
 
